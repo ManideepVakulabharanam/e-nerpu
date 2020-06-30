@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+ <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script type="text/javascript">
+function validate(){
+	   var UserName = document.forms["register"]["UserName"];
+	   var Password = document.forms["register"]["PassWord"];
+	   var uname = "manideep";
+	   var pwd = "1234";
+	   
+	   if(UserName.value == uname && pwd == Password.value){
+		   window.alert("hello");
+		   return true;
+	   }
+	   else{
+		   window.alert("enter correct login details");
+		   return false;
+	   }
+}
+</script>
+</head>
+<body>
+  <div class="text-center" id="signin">
+    <form class="form-signin" action="Test.html" method="get" onSubmit="return validate()" name="register" class="formreg">
+  <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+  <label for="inputEmail" class="sr-only">UserName</label>
+  <input type="text" id="UserName" class="form-control" placeholder="UserName" name="UserName" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="PassWord" class="form-control" placeholder="Password" name="PassWord" required>
+  <small>please enter correct password</small>
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+    <input type="hidden" id="login_attempt" value="">
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" id="Button">Sign in</button>
+  <h5 id="msg"></h5>
+</form>
+</div>
+</body>
+</html>
